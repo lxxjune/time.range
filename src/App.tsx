@@ -7,9 +7,6 @@ import {
 import type { PeriodFilter } from "./types/task";
 import { AppLayout } from "./components/layout/AppLayout";
 import { TodayView } from "./pages/TodayView";
-import { WeekView } from "./pages/WeekView";
-import { MonthView } from "./pages/MonthView";
-import { CompletedView } from "./pages/CompletedView";
 import { useState } from "react";
 
 function AppInner() {

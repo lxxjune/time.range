@@ -1,3 +1,3 @@
 export function WeekView() {
-    return <div>Week view (TODO)</div>;
-  }
+  return <div>Week view (TODO)</div>;
+}

@@ -1,3 +1,3 @@
 export function CompletedView() {
-    return <div>Completed view (TODO)</div>;
-  }
+  return <div>Completed view (TODO)</div>;
+}

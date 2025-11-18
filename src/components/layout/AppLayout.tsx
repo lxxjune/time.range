@@ -1,30 +1,32 @@
-import { ReactNode, useState } from "react";
+// src/components/layout/AppLayout.tsx
+import type { ReactNode } from "react"; // ✅ 타입용
+import { useState } from "react";       // ✅ 값(import)
 import { Sidebar } from "./Sidebar";
 import { TopStatsBar } from "./TopStatsBar";
 import type { PeriodFilter, Project } from "../../types/task";
 
 interface AppLayoutProps {
-    children: ReactNode;
-    currentView: PeriodFilter;
-    onChangeView: (view: PeriodFilter) => void;
-    onAddNew: () => void;
-    topStats?: {
-      totalFocusSec: number;
-      totalTasks: number;
-      completedTasks: number;
-      pendingTasks: number;
-    };
-    projects: Project[];   // ✅ 추가
-  }
+  children: ReactNode;
+  currentView: PeriodFilter;
+  onChangeView: (view: PeriodFilter) => void;
+  onAddNew: () => void;
+  topStats?: {
+    totalFocusSec: number;
+    totalTasks: number;
+    completedTasks: number;
+    pendingTasks: number;
+  };
+  projects: Project[];   // ✅ 추가
+}
 
-  export function AppLayout({
-    children,
-    currentView,
-    onChangeView,
-    onAddNew,
-    topStats,
-    projects,
-  }: AppLayoutProps) {
+export function AppLayout({
+  children,
+  currentView,
+  onChangeView,
+  onAddNew,
+  topStats,
+  projects,
+}: AppLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleToggleSidebar = () => {
