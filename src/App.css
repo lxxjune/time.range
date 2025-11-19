@@ -89,9 +89,6 @@
   pointer-events: auto;
 }
 
-.sidebar--collapsed-mobile {
-  /* 모바일에서는 기본 숨김, 데스크탑에서는 오버라이드 됨 */
-}
 
 .sidebar__inner {
   position: absolute;
@@ -113,11 +110,9 @@
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(
-    circle at top left,
-    rgba(15, 23, 42, 0.8),
-    rgba(15, 23, 42, 0.94)
-  );
+  background: radial-gradient(circle at top left,
+      rgba(15, 23, 42, 0.8),
+      rgba(15, 23, 42, 0.94));
 }
 
 /* 안쪽 내용 위에 오버레이가 덮지 않도록 */
@@ -270,11 +265,9 @@
 .today-view__item {
   border-radius: 14px;
   padding: 10px 12px;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.95),
-    rgba(15, 23, 42, 0.98)
-  );
+  background: linear-gradient(135deg,
+      rgba(15, 23, 42, 0.95),
+      rgba(15, 23, 42, 0.98));
   border: 1px solid rgba(31, 41, 55, 0.9);
   display: flex;
   flex-direction: column;
@@ -311,6 +304,115 @@
   border: 1px solid rgba(55, 65, 81, 0.8);
   font-size: 11px;
   color: var(--text-muted);
+}
+
+.today-view__add-button {
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 14px;
+  padding: 12px;
+  background: linear-gradient(135deg,
+      rgba(15, 23, 42, 0.8),
+      rgba(15, 23, 42, 0.9));
+  border: 1px dashed rgba(55, 65, 81, 0.8);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.today-view__add-button:hover {
+  background: rgba(31, 41, 55, 0.8);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ───── Task Form ───── */
+
+.task-form {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-form__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+  padding: 4px 0;
+}
+
+.task-form__input::placeholder {
+  color: var(--text-muted);
+}
+
+.task-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.task-form__date {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: var(--text-soft);
+  font-size: 12px;
+  outline: none;
+  font-family: inherit;
+}
+
+.task-form__date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.task-form__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-form__button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.task-form__button--cancel {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.task-form__button--cancel:hover {
+  color: var(--text-main);
+}
+
+.task-form__button--submit {
+  background: var(--accent);
+  color: #0b1120;
+}
+
+.task-form__button--submit:hover {
+  filter: brightness(1.1);
 }
 
 /* ───── 반응형 (데스크탑) ───── */
@@ -355,10 +457,11 @@
   .top-stats {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
   .sidebar__projects {
     margin: 6px 0 10px;
   }
-  
+
   .sidebar__projects-label {
     font-size: 11px;
     text-transform: uppercase;
@@ -366,7 +469,7 @@
     color: var(--text-soft);
     margin-bottom: 6px;
   }
-  
+
   .sidebar__projects-list {
     list-style: none;
     padding: 0;
@@ -374,7 +477,7 @@
     display: grid;
     gap: 6px;
   }
-  
+
   .sidebar__projects-item {
     padding: 7px 10px;
     border-radius: 999px;
